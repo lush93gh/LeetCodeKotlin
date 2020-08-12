@@ -1,7 +1,5 @@
 class FindTheTownJudge {
     fun findJudge(N: Int, trust: Array<IntArray>): Int {
-        if(N==1 && trust.isEmpty()) return 1
-
         val board = IntArray(N+1)
         for(t in trust){
             board[t[0]] -= 1
