@@ -1,6 +1,6 @@
 class BinarySearch {
     fun search(nums: IntArray, target: Int): Int {
-        var pivot = 0
+        var pivot: Int
         var left = 0
         var right = nums.size-1
 
