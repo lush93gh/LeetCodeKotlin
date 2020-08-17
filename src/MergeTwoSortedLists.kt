@@ -1,10 +1,6 @@
 
 
 class MergeTwoSortedLists {
-    class ListNode(var `val`: Int) {
-        var next: ListNode? = null
-    }
-
     fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         var L = l1
         var R = l2

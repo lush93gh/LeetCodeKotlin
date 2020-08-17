@@ -41,9 +41,4 @@ class SymmetricTree {
         }
         return listOf<List<Int>>()
     }
-
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
 }
