@@ -7,9 +7,10 @@ class Sqrt {
 
         while(left <= right){
             pivot = left + (right - left) /2
+            val pivotSquare = pivot * pivot
             when {
-                target == pivot * pivot -> return pivot.toInt()
-                target < pivot * pivot ->
+                target == pivotSquare -> return pivot.toInt()
+                target < pivotSquare ->
                     right = pivot - 1
                 else ->
                     left = pivot +1

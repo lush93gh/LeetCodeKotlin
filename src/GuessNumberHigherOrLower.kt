@@ -6,11 +6,11 @@ class GuessNumberHigherOrLower {
 
         while(left <= right){
             pivot = left + (right - left) /2
-            when {
-                0 == guess(pivot) -> return pivot
-                -1 == guess(pivot) ->
+            when (guess(pivot)) {
+                0 -> return pivot
+                -1 ->
                     right = pivot - 1
-                1 == guess(pivot) ->
+                1 ->
                     left = pivot +1
             }
         }
