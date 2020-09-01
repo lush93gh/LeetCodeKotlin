@@ -1,9 +1,6 @@
 class GameOfLife {
     fun gameOfLife(board: Array<IntArray>): Unit {
-        val nextBoard = Array(board.size){i -> IntArray(board[i].size)}
-
         for(i in board.indices){
-            val newRow = IntArray(board[i].size)
             for(j in board[i].indices){
                 var count = 0
                 for(k in -1..1){
@@ -13,27 +10,25 @@ class GameOfLife {
                         val ci = j + l
                         if(ri >= 0 && ri < board.size &&
                                 ci>= 0 && ci < board[i].size){
-                            count += board[ri][ci]
+                            val value = board[ri][ci]
+                            count += if(value == -1) 1 else if(value == 2) 0 else value
                         }
                     }
                 }
 
                 if(board[i][j] == 1){
-                     newRow[j] = when (count) {
-                         2, 3 -> 1
-                         else -> 0
-                     }
+                    if(count < 2 || count > 3) board[i][j] = -1
                 }
                 else{
-                    newRow[j] = if(count == 3) 1 else 0
+                     if(count == 3) board[i][j] = 2
                  }
             }
-            nextBoard[i] = newRow
         }
 
         for(i in board.indices){
             for(j in board[i].indices){
-                board[i][j] = nextBoard[i][j]
+                val value = board[i][j]
+                board[i][j] = if(value == -1) 0 else if(value == 2) 1 else value
             }
         }
     }
