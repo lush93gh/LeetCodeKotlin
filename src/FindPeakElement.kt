@@ -21,7 +21,7 @@ class FindPeakElement {
             }
         }
 
-        if(left != nums.size && nums[left] == target) return left
+        if(left != nums.size /*&& nums[left] == target*/) return left
 
         return -1
     }
