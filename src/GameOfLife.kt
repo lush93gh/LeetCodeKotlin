@@ -1,35 +1,31 @@
 class GameOfLife {
     fun gameOfLife(board: Array<IntArray>): Unit {
+        val map = HashMap<Int, Int>()
         for(i in board.indices){
             for(j in board[i].indices){
-                var count = 0
-                for(k in -1..1){
-                    for(l in -1..1){
-                        if(k == 0 && l ==0) continue
-                        val ri = i + k
-                        val ci = j + l
-                        if(ri >= 0 && ri < board.size &&
+                if(board[i][j] == 1){
+                    for(k in -1..1){
+                        for(l in -1..1){
+                            val ri = i + k
+                            val ci = j + l
+                            if(ri >= 0 && ri < board.size &&
                                 ci>= 0 && ci < board[i].size){
-                            val value = board[ri][ci]
-                            count += if(value == -1) 1 else if(value == 2) 0 else value
+                                val value = ri * board[ri].size + ci
+
+                                if(!map.containsKey(value)) map[value] = 0
+                                if(k != 0 || l !=0) map[value] = map[value]!! + 1
+                            }
                         }
                     }
                 }
-
-                if(board[i][j] == 1){
-                    if(count < 2 || count > 3) board[i][j] = -1
-                }
-                else{
-                     if(count == 3) board[i][j] = 2
-                 }
             }
         }
 
-        for(i in board.indices){
-            for(j in board[i].indices){
-                val value = board[i][j]
-                board[i][j] = if(value == -1) 0 else if(value == 2) 1 else value
-            }
+        for(cell in map){
+            val i = cell.key / board[0].size
+            val j = cell.key % board[0].size
+            val count = cell.value
+            board[i][j] = if(count == 3 ||(count == 2 && board[i][j] == 1)) 1 else 0
         }
     }
 }
