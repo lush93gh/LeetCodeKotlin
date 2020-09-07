@@ -7,22 +7,26 @@ class FindPeakElement {
         var pivot: Int
         var left = 0
         var right = nums.size
-        var nextIndex: Int
+        var nextIndex = 0
+        var prevIndex = 0
 
         while(left < right){
             pivot = left + (right - left) /2
+            prevIndex = if((pivot - 1) >= 0) pivot - 1 else pivot
             nextIndex = if((pivot + 1) <= (nums.size - 1)) pivot + 1 else pivot
-            when {
-                nums[pivot] >= nums[nextIndex] -> return pivot
-                nums[pivot] < nums[nextIndex] ->
-                    right = pivot - 1
-                else ->
-                    left = pivot +1
+            val numsPivot = nums[pivot]
+
+            if(numsPivot > nums[prevIndex]){
+                when {
+                    numsPivot >= nums[nextIndex] -> return pivot
+                    else ->
+                        left = pivot +1
+                }
             }
+            else right = pivot
         }
 
-        if(left != nums.size /*&& nums[left] == target*/) return left
-
-        return -1
+        return if(left != nums.size && nums[left] >= nums[prevIndex] && nums[left] >= nums[nextIndex]) left
+                else -1
     }
 }
