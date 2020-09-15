@@ -1,3 +1,5 @@
+package binarysearch
+
 class Sqrt {
     fun mySqrt(x: Int): Int {
         var pivot = 1L

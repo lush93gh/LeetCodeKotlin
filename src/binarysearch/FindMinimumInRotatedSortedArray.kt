@@ -1,3 +1,5 @@
+package binarysearch
+
 class FindMinimumInRotatedSortedArray {
     fun findMin(nums: IntArray): Int {
         if(nums[0] < nums[nums.size - 1]) return nums[0]

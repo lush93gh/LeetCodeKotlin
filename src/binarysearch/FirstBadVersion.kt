@@ -1,3 +1,5 @@
+package binarysearch
+
 class FirstBadVersion {
     fun firstBadVersion(n: Int) : Int {
         var pivot: Long

@@ -1,3 +1,6 @@
+package recursion
+
+import TreeNode
 import kotlin.math.max
 
 class MaximumDepthOfBinaryTree {
@@ -11,10 +14,5 @@ class MaximumDepthOfBinaryTree {
             return max(left, right) + 1
         }
         return 0
-    }
-
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
     }
 }

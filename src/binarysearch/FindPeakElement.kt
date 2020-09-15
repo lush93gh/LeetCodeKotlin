@@ -1,4 +1,4 @@
-import kotlin.math.min
+package binarysearch
 
 class FindPeakElement {
     fun findPeakElement(nums: IntArray): Int {

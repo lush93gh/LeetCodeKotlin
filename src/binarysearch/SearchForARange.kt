@@ -1,3 +1,5 @@
+package binarysearch
+
 class SearchForARange {
     fun searchRange(nums: IntArray, target: Int): IntArray {
         if(nums.isEmpty()) return intArrayOf(-1, -1)
@@ -11,7 +13,7 @@ class SearchForARange {
             pivot = left + (right - left) /2
             when {
                 nums[pivot] == target -> right = pivot
-                target < nums[pivot] -> right = pivot
+                nums[pivot] > target -> right = pivot
                 else -> left = pivot +1
             }
         }
@@ -24,7 +26,7 @@ class SearchForARange {
                 pivot = left + (right - left) /2
                 when {
                     nums[pivot] == target -> left = pivot + 1
-                    target < nums[pivot] -> right = pivot
+                    nums[pivot] > target -> right = pivot
                     else -> left = pivot + 1
                 }
             }

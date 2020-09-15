@@ -1,3 +1,5 @@
+package binarysearch
+
 class FindFirstAndLastPositionOfElementInSortedArray {
     fun searchRange(nums: IntArray, target: Int): IntArray {
         if(nums.isEmpty()) return intArrayOf(-1, -1)

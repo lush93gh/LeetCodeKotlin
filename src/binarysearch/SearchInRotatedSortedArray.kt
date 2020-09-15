@@ -1,3 +1,5 @@
+package binarysearch
+
 class SearchInRotatedSortedArray {
     fun search(nums: IntArray, target: Int): Int {
         var pivot: Int

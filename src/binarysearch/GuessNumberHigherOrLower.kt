@@ -1,3 +1,5 @@
+package binarysearch
+
 class GuessNumberHigherOrLower {
     fun guessNumber(n:Int):Int {
         var pivot: Int

@@ -1,3 +1,5 @@
+package binarysearch
+
 class BinarySearch {
     fun search(nums: IntArray, target: Int): Int {
         var pivot: Int
