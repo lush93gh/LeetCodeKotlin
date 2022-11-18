@@ -16,5 +16,6 @@ class E206 {
             head.next?.next = head
         }
         else result = head
+        (0..8).random()
     }
 }
