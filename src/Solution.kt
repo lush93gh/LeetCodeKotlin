@@ -5,17 +5,9 @@ class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            var c = H699()
-            val a = c.fallingSquares(
-                arrayOf(
-                    intArrayOf(4, 1),
-                    intArrayOf(6, 9),
-                    intArrayOf(6, 8),
-                    intArrayOf(1, 9),
-                    intArrayOf(9, 8)
-                )
-            )
-            println(a)
+            var c = Poker()
+            for (i in 0..51)
+            println(c.draw())
         }
     }
 
