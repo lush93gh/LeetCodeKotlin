@@ -24,9 +24,9 @@ class E70 {
     private val cache = HashMap<Int, Int>()
 
     fun climbStairs3(n: Int): Int {
-        if(cache.containsKey(n)) return cache[n]!!
+        if (cache.containsKey(n)) return cache[n]!!
 
-        val result = if(n<=2) n else climbStairs(n-1) + climbStairs(n-2)
+        val result = if (n <= 2) n else climbStairs(n - 1) + climbStairs(n - 2)
         cache[n] = result
 
         return result
