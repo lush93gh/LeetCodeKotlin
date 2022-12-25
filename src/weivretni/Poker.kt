@@ -1,3 +1,5 @@
+package weivretni
+
 class Poker {
     val list = (1..52).toMutableList()
     fun draw(): String {

@@ -1,4 +1,6 @@
-class TwoSum {
+package array
+
+class E1Kt {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val map = HashMap<Int, Int>()
 
