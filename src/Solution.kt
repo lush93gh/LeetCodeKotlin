@@ -1,4 +1,4 @@
-import weivretni.tennepo.CharactersSwap
+import weivretni.ta.TwoSumLessThanK
 
 class Solution {
     companion object {
@@ -13,8 +13,17 @@ class Solution {
 //            println(s)
 //            val v = intArrayOf(1, 2, 4, 5)
 
-            val a = CharactersSwap()
-            println(a.getString("bdea"))
+            val a = TwoSumLessThanK()
+           // val result = a.twoSumLessThanK(intArrayOf(1, 2, 3, 4), 4)
+        //    val result = a.twoSumLessThanK(intArrayOf(1, 2, 3), 3)
+            val result = a.twoSumLessThanK(intArrayOf(1, 2, 2, 3, 4), 5)
+            result.forEach {
+                it.forEach {
+                    print(it)
+                    print(" ")
+                }
+                println()
+            }
         }
     }
 }
