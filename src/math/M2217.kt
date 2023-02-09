@@ -35,7 +35,7 @@ class M2217 {
         return 10F.pow(n).toLong()
     }
 
-     fun scaleCount(query: Int, intLength: Int): Long {
+     private fun scaleCount(query: Int, intLength: Int): Long {
         return (query - 1) / pow((intLength - 1) / 2) + 1
     }
 
