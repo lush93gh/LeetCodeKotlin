@@ -23,21 +23,6 @@ class M5 {
             }
 
             p = 0
-            while (i - 1 - p >= 0 && i + p < arr.size) {
-                val checkLeft = isPalindromic(s, i - 1 - p, i + p)
-                if (checkLeft) {
-                    if (2 * p + 2 > max) {
-                        max = 2 * p + 2
-                        start = i - 1 - p
-                        end = i + p
-                    }
-                    p++
-                } else {
-                    break
-                }
-            }
-
-            p = 0
             while (i - p >= 0 && i + 1 + p < arr.size) {
                 val checkRight = isPalindromic(s, i - p, i + 1 + p)
                 if (checkRight) {

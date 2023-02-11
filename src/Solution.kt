@@ -5,7 +5,7 @@ class Solution {
         @JvmStatic
         fun main(args: Array<String>) {
             val a = M5()
-            println(a.longestPalindromicSubstring("bananas"))
+            println(a.longestPalindrome("bananas"))
 
         }
     }
