@@ -1,5 +1,6 @@
 package string
 
+//567. Permutation in String
 class M567 {
     fun checkInclusion1(s1: String, s2: String): Boolean {
         val s2CharArray = s2.toCharArray()

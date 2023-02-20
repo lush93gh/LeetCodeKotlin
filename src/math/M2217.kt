@@ -2,6 +2,7 @@ package math
 
 import kotlin.math.pow
 
+// 2217. Find Palindrome With Fixed Length
 class M2217 {
     fun kthPalindrome(queries: IntArray, intLength: Int): LongArray {
         val result = LongArray(queries.size)

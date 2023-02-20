@@ -2,6 +2,7 @@ package linkedlist
 
 import ListNode
 
+// 1290. Convert Binary Number in a Linked List to Integer
 class E1290 {
     fun getDecimalValue(head: ListNode?): Int {
         var count = 0

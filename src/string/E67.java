@@ -2,6 +2,7 @@ package string;
 
 import java.math.BigInteger;
 
+// 67. Add Binary
 public class E67 {
     public String addBinary1(String a, String b) {
         char[] aCharArray = a.toCharArray();

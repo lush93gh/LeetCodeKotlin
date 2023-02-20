@@ -1,5 +1,6 @@
 package binarysearch
 
+// 704. Binary Search
 class E704 {
     fun search1(nums: IntArray, target: Int): Int {
         var pivot: Int

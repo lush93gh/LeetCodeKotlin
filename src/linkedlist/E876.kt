@@ -2,6 +2,7 @@ package linkedlist
 
 import ListNode
 
+// 876. Middle of the Linked List
 class E876 {
     var depth = 0
     var result: ListNode? = null

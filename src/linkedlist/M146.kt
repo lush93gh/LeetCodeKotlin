@@ -2,6 +2,7 @@ package linkedlist
 
 import java.util.*
 
+//  146. LRU Cache
 class M146(private val capacity: Int) {
     private val deque: Queue<Int> = ArrayDeque<Int>(capacity)
     private val map = mutableMapOf<Int, Int>()
