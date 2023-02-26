@@ -1,16 +1,14 @@
-import array.M15
+import array.M16
 
 class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val a = M15()
+            val a = M16()
             val list = intArrayOf(
-                1,2,-2,-1
+                0,0,0
             )
-            //  a.buildWords(list)
-            //
-            println(a.threeSum(list))
+            println(a.threeSumClosest(list, 1))
         }
     }
 }
