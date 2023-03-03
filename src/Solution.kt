@@ -1,21 +1,19 @@
-import array.M454
+import array.M167
 
 class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val a = M454()
+            val a = M167()
             val list = intArrayOf(
-                0, 0, 0
+                -1,0
             )
-            println(
-                a.fourSumCount(
-                    intArrayOf(0,1,-1),
-                    intArrayOf(-1,1,0),
-                    intArrayOf(0,0,1),
-                    intArrayOf(-1,1,1)
-                )
-            )
+            a.twoSum(
+                list,
+                -1
+            ).forEach {
+                println("$it")
+            }
         }
     }
 }
