@@ -9,19 +9,21 @@ class H126 {
         var currentLevel = 1
         val result = mutableSetOf<List<String>>()
         buildWords(wordList)
-        val Q = LinkedList<Pair<String, List<String>>>()
-        val visited = mutableMapOf<String, Boolean>()
-        Q.offer(beginWord to listOf(beginWord))
+        val Q = LinkedList<List<String>>()
+        val visited = mutableSetOf<String>()
+        Q.offer(listOf(beginWord))
         while (Q.isNotEmpty()) {
-            val (word, ladders) = Q.poll()
+            val ladders = Q.poll()
+            val word = ladders.last()
             if (ladders.size >= currentLevel) {
+                println(ladders.size)
                 currentLevel = ladders.size
                 if (ladders.size - 2 >= 0) {
-                    visited[ladders[ladders.size - 2]] = true
+                    visited.add(ladders[ladders.size - 2])
                 }
             }
             if (ladders.size <= min && !visited.contains(word)) {
-                println(ladders)
+                // println(ladders)
                 if (word == endWord) {
                     if (ladders.size < min) {
                         min = ladders.size
@@ -32,6 +34,7 @@ class H126 {
                     if (ladders.size + 1 <= min) {
                         for (i in word.indices) {
                             val variant = word.substring(0, i) + "-" + word.substring(i + 1, word.length)
+                            val newList = mutableListOf<String>()
                             words.getOrDefault(variant, listOf()).forEach { nextWord ->
                                 if (nextWord == endWord) {
                                     if (ladders.size + 1 < min) {
@@ -42,9 +45,13 @@ class H126 {
                                 }
                                 val condition = (ladders.size + 1 == min && nextWord != endWord)
                                 if (!condition && !ladders.contains(nextWord) && !visited.contains(nextWord)) {
-                                    Q.offer(nextWord to ladders + nextWord)
+                                    Q.offer(ladders + nextWord)
+                                }
+                                if (!ladders.dropLast(1).contains(nextWord)) {
+                                    newList.add(nextWord)
                                 }
                             }
+                            words[variant] = newList
                         }
                     }
                 }
