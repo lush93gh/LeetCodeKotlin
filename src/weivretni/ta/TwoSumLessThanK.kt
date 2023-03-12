@@ -3,7 +3,7 @@ package weivretni.ta
 
 class TwoSumLessThanK {
 
-    // time complexity : (nlogn) for sorting the array
+    // time complexity : (nlogn) for sorting the arraysandstrings.array
     // Space complexity: O(1)
     fun twoSumLessThanK(nums: IntArray, k: Int): Array<IntArray> {
 
