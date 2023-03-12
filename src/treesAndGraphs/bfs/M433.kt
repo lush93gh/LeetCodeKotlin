@@ -4,30 +4,31 @@ import java.util.*
 
 class M433 {
     fun minMutation(startGene: String, endGene: String, bank: Array<String>): Int {
-        var min = Int.MAX_VALUE
         val map = buildBank(bank, mapOf())
-        val Q: Queue<List<String>> = LinkedList()
+        val Q: Queue<Pair<String, Int>> = LinkedList()
         val visited = mutableSetOf<String>()
-        Q.add(listOf(startGene))
+        Q.add(startGene to 0)
 
         while (Q.isNotEmpty()) {
-            val mutations = Q.poll()
-            val lastGene = mutations.last()
-            if (lastGene == endGene && mutations.size - 1 < min) {
-                min = mutations.size - 1
-                continue
-            }
-            if (!visited.contains(lastGene)) {
+            for (j in Q.indices) {
+                val mutations = Q.poll()
+                val lastGene = mutations.first
+                val currentDepth = mutations.second
+                if (lastGene == endGene) {
+                    return currentDepth
+                }
                 visited.add(lastGene)
                 for (i in lastGene.indices) {
                     val mutation = lastGene.substring(0, i) + "-" + lastGene.substring(i + 1, lastGene.length)
                     map[mutation]?.forEach {
-                        Q.add(mutations + it)
+                        if (!visited.contains(it)) {
+                            Q.add(it to currentDepth + 1)
+                        }
                     }
                 }
             }
         }
-        return if (min == Int.MAX_VALUE) -1 else min
+        return -1
     }
 
     private fun buildBank(bank: Array<String>, map: Map<String, List<String>>): Map<String, List<String>> {
