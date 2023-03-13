@@ -1,3 +1,5 @@
+package arraysAndStrings.string
+
 class ReverseString {
     fun reverseString(s: CharArray): Unit {
         for(i in 0 until  s.size/2){

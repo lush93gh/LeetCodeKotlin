@@ -1,3 +1,7 @@
+package treesAndGraphs
+
+import TreeNode
+
 class PostorderTraversal {
     fun postorderTraversal(root: TreeNode?): List<Int> {
         root?.let{

@@ -1,3 +1,5 @@
+package mathAndLogicPuzzles
+
 import kotlin.random.Random
 
 class M470 {

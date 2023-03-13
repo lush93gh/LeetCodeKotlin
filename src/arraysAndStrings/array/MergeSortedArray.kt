@@ -1,3 +1,5 @@
+package arraysAndStrings.array
+
 class MergeSortedArray {
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
         val L = IntArray(m + 1)

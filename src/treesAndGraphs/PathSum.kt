@@ -1,3 +1,5 @@
+package treesAndGraphs
+
 class PathSum {
     var hasFound = false
 

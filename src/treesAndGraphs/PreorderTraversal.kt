@@ -1,3 +1,7 @@
+package treesAndGraphs
+
+import TreeNode
+
 class PreorderTraversal {
     fun preorderTraversal(root: TreeNode?): List<Int> {
         root?.let{

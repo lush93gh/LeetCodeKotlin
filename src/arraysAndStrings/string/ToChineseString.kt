@@ -1,3 +1,5 @@
+package arraysAndStrings.string
+
 class ToChineseString {
     fun toChineseString(input: Int): String {
         var output: String = ""
