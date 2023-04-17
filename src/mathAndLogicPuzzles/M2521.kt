@@ -1,5 +1,6 @@
 package mathAndLogicPuzzles
 
+// 2521. Distinct Prime Factors of Product of Array
 class M2521 {
     fun distinctPrimeFactors(nums: IntArray): Int {
         var max = Int.MIN_VALUE
@@ -8,24 +9,28 @@ class M2521 {
                 max = it
             }
         }
-        val primes = mutableSetOf<Int>()
-        for (i in 2..max) {
+
+        var count = 0
+        for (prime in 2..max) {
             var isPrime = true
-            for (j in 2 until i) {
-                if (i % j == 0) isPrime = false
+            for (j in 2 until prime) {
+                if (prime % j == 0) {
+                    isPrime = false
+                    break
+                }
             }
             if (isPrime) {
-                primes.add(i)
-            }
-        }
-        val set = mutableSetOf<Int>()
-        nums.forEach { num ->
-            primes.forEach { prime ->
-                if (prime <= num && num % prime == 0) {
-                    set.add(prime)
+                run loop@{
+                    nums.forEach { num ->
+                        if (num % prime == 0) {
+                            count++
+                            return@loop
+                        }
+                    }
                 }
             }
         }
-        return set.size
+
+        return count
     }
 }
