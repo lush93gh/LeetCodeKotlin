@@ -3,7 +3,7 @@ package arraysAndStrings.string;
 import java.math.BigInteger;
 
 // 67. Add Binary
-public class E67 {
+public class E67J {
     public String addBinary1(String a, String b) {
         char[] aCharArray = a.toCharArray();
         char[] bCharArray = b.toCharArray();
