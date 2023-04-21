@@ -1,7 +1,6 @@
-package arraysAndStrings.array
+package sortingAndSearching.binarysearch
 
-// 215. Kth Largest Element in an Array
-class M215 {
+class BS {
     fun findKthLargest(nums: IntArray, k: Int): Int {
         var min = 0
         var max = 0
