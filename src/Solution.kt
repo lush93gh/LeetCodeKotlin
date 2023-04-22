@@ -16,13 +16,7 @@ class Solution {
 //            )
 //            )
 
-         //   println(a.squareFreeSubsets(intArrayOf(17,27,20,1,19)))
-          //  a.twoSum(intArrayOf(1,1,2,2,2,2), target = 3, i = 0, j= 5)
-        //    println(a.plus("17"))
             println(a.nearestPalindromic("88"))
-//            intArrayOf(17,27,20,1,19).filter { a.isSquareFree(it) }.forEach {
-//                println(it)
-//            }
         }
     }
 }
