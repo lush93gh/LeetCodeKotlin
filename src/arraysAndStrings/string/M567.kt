@@ -8,8 +8,7 @@ class M567 {
             val table = mutableMapOf<Char, Int>()
             for (j in i until i + s1.length) {
                 val char = s2CharArray[j]
-                table.putIfAbsent(char, 0)
-                table[char] = table[char]!! + 1
+                table[char] = (table[char] ?: 0) + 1
             }
             val s1CharArray = s1.toCharArray()
             for (j in s1.indices) {
@@ -23,6 +22,7 @@ class M567 {
         }
         return false
     }
+
     fun checkInclusion(s1: String, s2: String): Boolean {
         if (s2.length < s1.length) return false
         val s2CharArray = s2.toCharArray()
@@ -42,8 +42,7 @@ class M567 {
                 val remove = s2[i]
                 val add = s2[i + s1.length]
                 table2[remove] = table2[remove]!! - 1
-            }
-            else return true
+            } else return true
             val table = mutableMapOf<Char, Int>()
             for (j in i until i + s1.length) {
                 val char = s2CharArray[j]
