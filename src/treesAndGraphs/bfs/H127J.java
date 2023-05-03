@@ -2,7 +2,6 @@ package treesAndGraphs.bfs;
 
 import java.util.*;
 
-// 127. Word Ladder
 class H127JLegacy {
     class Pair<T1, T2> {
         T1 first;

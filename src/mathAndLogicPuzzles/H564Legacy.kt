@@ -3,7 +3,6 @@ package mathAndLogicPuzzles
 import kotlin.math.ceil
 import kotlin.math.min
 
-// 564. Find the Closest Palindrome
 class H564Legacy {
     fun nearestPalindromic(n: String): String {
         val nLong = n.toLong()
