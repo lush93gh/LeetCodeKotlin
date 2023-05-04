@@ -1,6 +1,6 @@
 package hackerrank;
 
-public class CaesarCipher {
+public class CaesarCipherJ {
     public static String caesarCipher(String s, int k) {
         // Write your code here
         StringBuilder result = new StringBuilder();

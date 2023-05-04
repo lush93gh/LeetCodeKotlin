@@ -1,6 +1,6 @@
 package hackerrank;
 
-public class TowerBreakers {
+public class TowerBreakersJ {
     public static int towerBreakers(int n, int m) {
         // Write your code here
         if (m == 1) return 2;

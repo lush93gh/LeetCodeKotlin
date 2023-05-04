@@ -2,35 +2,50 @@ package hackerrank
 
 class PalindromeIndex {
     fun palindromeIndex(s: String): Int {
-        // Write your code here
-        var result = -1
         var i = 0
         var j = s.length - 1
+        var firstInvalidI = 0
+        var firstInvalidJ = 0
+        var failedCount = 0
         while (i < j) {
-            val isValid = isValid(s, i, j)
             if (s[i] == s[j]) {
                 i++
                 j--
             } else {
-                if (!isValid) return -1
-                else {
-                  //  isValid = false
-                    if (s[i + 1] == s[j]) {
-                        result = i
-                        i += 2
-                        j--
-                    } else if (s[i] == s[j - 1]) {
-                        result = j
-                        i++
-                        j -= 2
-                    }
-                }
+                firstInvalidI = i
+                firstInvalidJ = j
+                println("$firstInvalidI $firstInvalidJ")
+                failedCount++
+                break
             }
         }
-        return result
-    }
+        if(failedCount == 0) return -1
 
-    fun isValid(s: String, i: Int, j: Int): Boolean {
-        return (i < j && s[i] == s[j]) || isValid(s, i + 1, j) || isValid(s, i, j - 1)
+        i = firstInvalidI + 1
+        j = firstInvalidJ
+        while (i < j) {
+            if (s[i] == s[j]) {
+                i++
+                j--
+            } else {
+                failedCount++
+                println("$failedCount $i $j")
+                break
+            }
+        }
+        if (failedCount == 1) return firstInvalidI
+
+
+        i = firstInvalidI
+        j = firstInvalidJ - 1
+        while (i < j) {
+            if (s[i] == s[j]) {
+                i++
+                j--
+            } else {
+                return -1
+            }
+        }
+        return firstInvalidJ
     }
 }
