@@ -1,6 +1,6 @@
 package hackerrank;
 
-public class PalindromeIndex {
+public class PalindromeIndexJ {
     static int attempts = 0;
     static int result = -1;
 

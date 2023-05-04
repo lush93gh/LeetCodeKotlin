@@ -3,7 +3,7 @@ package hackerrank;
 import java.util.Collections;
 import java.util.List;
 
-public class FindTheMedian {
+public class FindTheMedianJ {
     public static int findMedian(List<Integer> arr) {
         // Write your code here
         Collections.sort(arr);

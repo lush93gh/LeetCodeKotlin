@@ -2,7 +2,7 @@ package hackerrank;
 
 import java.util.List;
 
-public class PlusMinus {
+public class PlusMinusJ {
     /*
      * Complete the 'plusMinus' function below.
      *

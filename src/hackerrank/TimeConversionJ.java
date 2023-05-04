@@ -1,6 +1,6 @@
 package hackerrank;
 
-public class TimeConversion {
+public class TimeConversionJ {
     public static String timeConversion(String s) {
         // Write your code here
         boolean isAM = s.endsWith("AM");

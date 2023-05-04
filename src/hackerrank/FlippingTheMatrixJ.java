@@ -2,7 +2,7 @@ package hackerrank;
 
 import java.util.List;
 
-public class FlippingTheMatrix {
+public class FlippingTheMatrixJ {
     public static int flippingMatrix(List<List<Integer>> matrix) {
         // Write your code here
         int sum = 0;

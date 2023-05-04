@@ -3,7 +3,7 @@ package hackerrank;
 import java.util.Collections;
 import java.util.List;
 
-public class MiniMaxSum {
+public class MiniMaxSumJ {
     public static void miniMaxSum(List<Integer> arr) {
         // Write your code here
         Collections.sort(arr);

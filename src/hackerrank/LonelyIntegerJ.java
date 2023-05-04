@@ -3,7 +3,7 @@ package hackerrank;
 import java.util.Collections;
 import java.util.List;
 
-public class LonelyInteger {
+public class LonelyIntegerJ {
     public static int lonelyinteger(List<Integer> a) {
         // Write your code here
         Collections.sort(a);

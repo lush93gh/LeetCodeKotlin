@@ -3,7 +3,7 @@ package hackerrank;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CountingSort {
+public class CountingSort1J {
     public static List<Integer> countingSort(List<Integer> arr) {
         // Write your code here
         List<Integer> result = new ArrayList<>();

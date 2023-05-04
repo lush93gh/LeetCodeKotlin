@@ -2,7 +2,7 @@ package hackerrank;
 
 import java.util.List;
 
-public class DiagonalDifference {
+public class DiagonalDifferenceJ {
     public static int diagonalDifference(List<List<Integer>> arr) {
         // Write your code here
         int primaryDiagonal = 0;
