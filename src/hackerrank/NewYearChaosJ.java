@@ -3,7 +3,7 @@ package hackerrank;
 import java.util.Collections;
 import java.util.List;
 
-public class MinimumBribes {
+public class NewYearChaosJ {
     public static void minimumBribes(List<Integer> q) {
         // Write your code here
         int sum = 0;

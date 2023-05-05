@@ -1,6 +1,6 @@
 package hackerrank;
 
-public class SuperDigit {
+public class RecursiveDigitSumJ {
     public static int superDigit(String n, int k) {
         // Write your code here
         char[] charArray = n.toCharArray();

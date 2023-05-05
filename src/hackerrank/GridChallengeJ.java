@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class GridChallenge {
+public class GridChallengeJ {
     public static String gridChallenge(List<String> grid) {
         // Write your code here
         List<char[]> list = new ArrayList<>();
