@@ -31,3 +31,31 @@ class SimpleTextEditor {
         stack.pop()
     }
 }
+
+class SimpleTextEditor2 {
+    private val stack = Stack<Char>()
+
+    fun append(w: String) {
+        w.forEach {
+            stack.push(it)
+        }
+    }
+
+    fun delete(k: Int): String {
+        var toRemove = k
+        var removedString = ""
+        while (toRemove > 0) {
+            if (stack.isNotEmpty()) {
+                removedString = stack.pop() + removedString
+                toRemove--
+            }
+        }
+        return removedString
+    }
+
+    fun print(k: Int) {
+        if (stack.isNotEmpty()) {
+            println(stack[k-1])
+        }
+    }
+}
