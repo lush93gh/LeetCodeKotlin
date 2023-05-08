@@ -1,13 +1,14 @@
-import hackerrank.LegoBlocks
+import hackerrank.NoPrefixSet
 
 
 class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val a = LegoBlocks()
+            val a = NoPrefixSet()
 
-            println(a.legoBlocks(4, 6))
+          //  println(a.buildTree("word"))
+            println(a.noPrefix(arrayOf("aab", "defgab", "abcde", "aabcde", "bbbbbbbbbb", "jabjjjad")))
 
 
 
