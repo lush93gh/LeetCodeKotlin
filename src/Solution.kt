@@ -8,7 +8,7 @@ class Solution {
             val a = NoPrefixSet()
 
           //  println(a.buildTree("word"))
-            println(a.noPrefix(arrayOf("aab", "defgab", "abcde", "aabcde", "bbbbbbbbbb", "jabjjjad")))
+         //   println(a.noPrefix(arrayOf("aab", "defgab", "abcde", "aabcde", "bbbbbbbbbb", "jabjjjad")))
 
 
 
