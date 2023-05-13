@@ -1,4 +1,4 @@
-package treesAndGraphs
+package treesAndGraphs.binarytree
 
 import TreeNode
 

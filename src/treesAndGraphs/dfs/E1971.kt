@@ -1,5 +1,7 @@
 package treesAndGraphs.dfs
 
+import java.util.*
+
 
 // 1971. Find if Path Exists in Graph
 class E1971 {
@@ -34,5 +36,26 @@ class E1971 {
             }
             return false
         }
+    }
+
+    private fun hasPathBFS(graph: Map<Int, List<Int>>, current: Int, target: Int): Boolean {
+        val queue: Queue<Int> = LinkedList()
+        val visited = mutableSetOf<Int>()
+        queue.offer(current)
+        visited.add(current)
+        while (queue.isNotEmpty()) {
+            for (i in queue.indices) {
+                val node = queue.poll()
+                if (node == target) return true
+                graph[node]?.forEach { neighbor ->
+                    if (!visited.contains(neighbor)) {
+                        if (neighbor == target) return true
+                        visited.add(neighbor)
+                        queue.offer(neighbor)
+                    }
+                }
+            }
+        }
+        return false
     }
 }
