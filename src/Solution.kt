@@ -1,11 +1,13 @@
-import hackerrank.NoPrefixSet
 
+import hackerrank.CounterGame
 
 class Solution {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val a = NoPrefixSet()
+            val a = CounterGame()
+
+            println(a.counterGame(6))
 
           //  println(a.buildTree("word"))
          //   println(a.noPrefix(arrayOf("aab", "defgab", "abcde", "aabcde", "bbbbbbbbbb", "jabjjjad")))

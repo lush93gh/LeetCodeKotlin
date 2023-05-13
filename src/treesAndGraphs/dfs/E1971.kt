@@ -1,12 +1,11 @@
 package treesAndGraphs.dfs
 
 
+// 1971. Find if Path Exists in Graph
 class E1971 {
-    private val visited = mutableSetOf<Int>()
     fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
         val graph = buildGraph(edges)
-        println(graph)
-        return hasPath(graph, source, destination)
+        return hasPath(graph, mutableSetOf(source), source, destination)
     }
 
     private fun buildGraph(edges: Array<IntArray>): Map<Int, List<Int>> {
@@ -20,16 +19,15 @@ class E1971 {
         return graph
     }
 
-    private fun hasPath(graph: Map<Int, List<Int>>, current: Int, target: Int): Boolean {
+    private fun hasPath(graph: Map<Int, List<Int>>, visited: MutableSet<Int>, current: Int, target: Int): Boolean {
         if (current == target) {
             return true
         } else {
-            visited.add(current)
             graph[current]?.let { neighbors ->
-                for (index in neighbors.indices) {
-                    val neighbor = neighbors[index]
+                neighbors.forEach { neighbor ->
                     if (!visited.contains(neighbor)) {
-                        val hasPath = hasPath(graph, neighbor, target)
+                        visited.add(neighbor)
+                        val hasPath = hasPath(graph, visited, neighbor, target)
                         if (hasPath) return true
                     }
                 }
