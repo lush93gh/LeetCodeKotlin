@@ -1,4 +1,4 @@
-package treesAndGraphs.dfs
+package treesAndGraphs
 
 import java.util.*
 
@@ -6,8 +6,10 @@ import java.util.*
 // 1971. Find if Path Exists in Graph
 class E1971 {
     fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {
-        val graph = buildGraph(edges)
-        return hasPath(graph, mutableSetOf(source), source, destination)
+        //val graph = buildGraph(edges)
+        //return hasPathStack(graph, source, destination)
+        val disjointSet = buildDisJointSet(n, edges)
+        return disjointSet.comparison(source, destination)
     }
 
     private fun buildGraph(edges: Array<IntArray>): Map<Int, List<Int>> {
@@ -21,7 +23,17 @@ class E1971 {
         return graph
     }
 
-    private fun hasPath(graph: Map<Int, List<Int>>, visited: MutableSet<Int>, current: Int, target: Int): Boolean {
+    private fun buildDisJointSet(n: Int, edges: Array<IntArray>): DisjointSet {
+        val disjointSet = DisjointSet(n)
+        edges.forEach { edge ->
+            val a = edge[0]
+            val b = edge[1]
+            disjointSet.union(a, b)
+        }
+        return disjointSet
+    }
+
+    private fun hasPathDFS(graph: Map<Int, List<Int>>, visited: MutableSet<Int>, current: Int, target: Int): Boolean {
         if (current == target) {
             return true
         } else {
@@ -29,7 +41,7 @@ class E1971 {
                 neighbors.forEach { neighbor ->
                     if (!visited.contains(neighbor)) {
                         visited.add(neighbor)
-                        val hasPath = hasPath(graph, visited, neighbor, target)
+                        val hasPath = hasPathDFS(graph, visited, neighbor, target)
                         if (hasPath) return true
                     }
                 }
@@ -53,6 +65,26 @@ class E1971 {
                         visited.add(neighbor)
                         queue.offer(neighbor)
                     }
+                }
+            }
+        }
+        return false
+    }
+
+    private fun hasPathStack(graph: Map<Int, List<Int>>, current: Int, target: Int): Boolean {
+        val stack = Stack<Int>()
+        val visited = mutableSetOf<Int>()
+        stack.push(current)
+        visited.add(current)
+
+        while (stack.isNotEmpty()) {
+            val node = stack.pop()
+            if (node == target) return true
+            graph[node]?.forEach { neighbor ->
+                if (!visited.contains(neighbor)) {
+                    if (neighbor == target) return true
+                    stack.push(neighbor)
+                    visited.add(neighbor)
                 }
             }
         }
