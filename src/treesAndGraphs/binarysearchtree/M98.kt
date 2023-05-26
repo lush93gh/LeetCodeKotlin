@@ -1,13 +1,14 @@
 package treesAndGraphs.binarysearchtree
 
 import TreeNode
+import java.util.*
 import kotlin.math.max
 import kotlin.math.min
 
 // 98. Validate Binary Search Tree
 class M98 {
     fun isValidBST(root: TreeNode?): Boolean {
-        return traverse(root, Long.MIN_VALUE, Long.MAX_VALUE)
+        return traverseIterative(root)
     }
 
     fun traverse1(root: TreeNode?): Triple<Boolean, Int, Int> {
@@ -34,12 +35,38 @@ class M98 {
         } ?: Triple(true, 0, 0)
     }
 
-    private fun traverse(root: TreeNode?, lower: Long, upper: Long): Boolean {
+    private fun traverseRecursive(root: TreeNode?, lower: Long, upper: Long): Boolean {
         return root?.let {
             val value = root.`val`.toLong()
             value in (lower + 1) until upper
-                    && traverse(it.left, lower, value)
-                    && traverse(it.right, value, upper)
+                    && traverseRecursive(it.left, lower, value)
+                    && traverseRecursive(it.right, value, upper)
+        } ?: true
+    }
+
+    private fun traverseIterative(root: TreeNode?): Boolean {
+        return root?.let {
+            val stack = Stack<Triple<TreeNode?, Long, Long>>()
+            val visited = mutableSetOf<TreeNode?>()
+            stack.push(Triple(root, Long.MIN_VALUE, Long.MAX_VALUE))
+            visited.add(root)
+            while (stack.isNotEmpty()) {
+                val (node, lower, upper) = stack.pop()
+                node?.`val`?.let { value ->
+                    if (value !in (lower + 1) until upper) return false
+                    else {
+                        if (!visited.contains(node.left)) {
+                            stack.push(Triple(node.left, lower, value.toLong()))
+                            visited.add(node.left)
+                        }
+                        if (!visited.contains(node.right)) {
+                            stack.push(Triple(node.right, value.toLong(), upper))
+                            visited.add(node.right)
+                        }
+                    }
+                }
+            }
+            return true
         } ?: true
     }
 }
