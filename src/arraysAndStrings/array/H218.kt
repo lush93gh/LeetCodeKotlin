@@ -31,7 +31,7 @@ class H218 {
                 minus.forEach { remove(it) }
                 addAll(plus)
             } else set
-            val nextHeight = nextSet.max() ?: 0
+            val nextHeight = nextSet.max() 
             if (height != nextHeight) {
                 result.add(listOf(index, nextHeight))
             }

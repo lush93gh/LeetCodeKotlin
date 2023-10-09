@@ -1,6 +1,6 @@
-package arraysAndStrings.array
+package sortingAndSearching
 
-class MergeSortedArray {
+class E88 {
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
         val L = IntArray(m + 1)
         for (i in 0 until m)

@@ -10,27 +10,24 @@ class E572 {
         else if (subRoot == null) return false
         else {
             val candidate = find(root, subRoot)
-            println(candidate?.`val`)
             val result = areTreesSame(candidate, subRoot)
-            if (result) return result
+            if (result) return true
             else {
                 val leftResult = isSubtree(root.left, subRoot)
-                if (leftResult) return leftResult
-                val rightResult = isSubtree(root.right, subRoot)
-                if (rightResult) return rightResult
-                return false
+                if (leftResult) return true
+                return isSubtree(root.right, subRoot)
             }
         }
     }
 
-    fun find(t1: TreeNode?, t2: TreeNode?): TreeNode? {
+    private fun find(t1: TreeNode?, t2: TreeNode?): TreeNode? {
         if (t1?.`val` == t2?.`val`) return t1
         val left = t1?.left?.let { find(it, t2) }
         if (left != null) return left
         return t1?.right?.let { find(it, t2) }
     }
 
-    fun areTreesSame(r1: TreeNode?, r2: TreeNode?): Boolean {
+    private fun areTreesSame(r1: TreeNode?, r2: TreeNode?): Boolean {
         return if (r1 == null && r2 == null) true
         else if (r1 == null) false
         else if (r2 == null) false
