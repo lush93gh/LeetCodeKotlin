@@ -1,13 +1,14 @@
-import sortingAndSearching.binarysearch.E69
+import bitManipulation.E0503
 
 class Solution {
 
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val a = E69()
+            val a = E0503()
             //println(a.numOfWays(intArrayOf(19,3,57,34,15,89,58,35,2,33,46,13,40,79,60,30,61,26,54,22,84,51,75,6,87,44,55,48,27,8,72,47,16,69,36,76,41,1,80,62,73,24,93,50,92,65,39,5,32,67,12,29,90,45,9,38,88,52,10,85,74,66,83,18,20,77,49,28,23,53,86,64,78,82,37,42,56,17,81,4,14,70,59,31,7,25,43,68,91,71,21,63,94,11)))
-            println(a.mySqrt(2147395599))
+            println(a.reverseBits(2147483647))
+            println(a.reverseBits(-1))
 
 
 
